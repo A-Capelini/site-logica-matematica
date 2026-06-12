@@ -22,36 +22,55 @@ st.markdown(r"""
 """)
 
 st.markdown("---")
-st.header("2. Regras de Inferência (Dedução)")
-st.write("Na prática, usamos estruturas famosas e já provadas para deduzir conclusões rapidamente sem precisar fazer tabelas.")
+st.header("2. Argumentos Válidos Fundamentais")
+st.write("Conforme a Álgebra das Proposições, existem argumentos básicos que funcionam como **Regras de Inferência**. Eles nos permitem deduzir conclusões rapidamente sem precisar de tabelas-verdade.")
 
-tab1, tab2, tab3, tab4 = st.tabs(["Modus Ponens", "Modus Tollens", "Silogismos", "Prova por Absurdo"])
+# Separando em abas para organizar os 9 argumentos do seu material
+tab1, tab2, tab3, tab4 = st.tabs(["Regras Básicas", "Regras Modus", "Silogismos e Dilema", "Prova por Absurdo"])
 
 with tab1:
-    st.subheader("Modus Ponens (Afirmação do Antecedente)")
-    st.write("Se temos uma condicional e afirmamos a primeira parte, deduzimos a segunda.")
-    st.latex(r"p \rightarrow q, \quad p \quad \vdash \quad q")
-    st.caption("Ex: Se chover, a rua molha. Choveu. Logo, a rua molhou.")
+    st.subheader("Regras Básicas de Construção")
+    
+    st.markdown("**1. Adição (Ad):** Se $P$ é verdade, $P \lor Q$ também é (podemos 'adicionar' qualquer coisa com OU).")
+    st.latex(r"P \quad \vdash \quad P \lor Q \quad \text{ou} \quad Q \quad \vdash \quad P \lor Q")
+    
+    st.markdown("**2. Simplificação (Simp):** Se $P \land Q$ é verdade, podemos separar e afirmar cada parte isoladamente.")
+    st.latex(r"P \land Q \quad \vdash \quad P \quad \text{e} \quad P \land Q \quad \vdash \quad Q")
+    
+    st.markdown("**3. Conjunção (Con):** Se temos duas premissas verdadeiras separadas, podemos juntá-las com 'E'.")
+    st.latex(r"P, \quad Q \quad \vdash \quad P \land Q")
+
+    st.markdown("**4. Absorção (Abs):** A condicional absorve a conjunção do antecedente com o consequente.")
+    st.latex(r"P \rightarrow Q \quad \vdash \quad P \rightarrow (P \land Q)")
 
 with tab2:
-    st.subheader("Modus Tollens (Negação do Consequente)")
-    st.write("Se temos uma condicional e negamos a segunda parte, deduzimos a negação da primeira.")
-    st.latex(r"p \rightarrow q, \quad \sim q \quad \vdash \quad \sim p")
-    st.caption("Ex: Se chover, a rua molha. A rua NÃO está molhada. Logo, NÃO choveu.")
+    st.subheader("Regras Modus (Modo)")
+    
+    st.markdown("**5. Modus Ponens (Mp):** Afirmação do antecedente.")
+    st.latex(r"P \rightarrow Q, \quad P \quad \vdash \quad Q")
+    st.caption("Ex: Se chover (P), a rua molha (Q). Choveu (P). Logo, a rua molhou (Q).")
+    
+    st.markdown("**6. Modus Tollens (Mt):** Negação do consequente.")
+    st.latex(r"P \rightarrow Q, \quad \sim Q \quad \vdash \quad \sim P")
+    st.caption("Ex: Se chover, a rua molha. A rua NÃO está molhada (~Q). Logo, NÃO choveu (~P).")
 
 with tab3:
-    st.subheader("Silogismo Hipotético e Disjuntivo")
-    st.write("**Silogismo Hipotético (Regra da Cadeia):**")
-    st.latex(r"p \rightarrow q, \quad q \rightarrow r \quad \vdash \quad p \rightarrow r")
+    st.subheader("Silogismos e Dilemas")
     
-    st.write("**Silogismo Disjuntivo:**")
-    st.latex(r"p \lor q, \quad \sim p \quad \vdash \quad q")
+    st.markdown("**7. Silogismo Disjuntivo (Sd):** Se temos uma disjunção (OU) e negamos um lado, o outro sobra.")
+    st.latex(r"P \lor Q, \quad \sim P \quad \vdash \quad Q \quad \text{ou} \quad P \lor Q, \quad \sim Q \quad \vdash \quad P")
+    
+    st.markdown("**8. Silogismo Hipotético (Sh):** Regra da cadeia transitiva.")
+    st.latex(r"P \rightarrow Q, \quad Q \rightarrow R \quad \vdash \quad P \rightarrow R")
+
+    st.markdown("**9. Dilema Construtivo (Dc):**")
+    st.latex(r"(P \rightarrow Q) \land (R \rightarrow S), \quad P \lor R \quad \vdash \quad Q \lor S")
 
 with tab4:
     st.subheader("Redução ao Absurdo (Demonstração Indireta)")
     st.write(r"""
-    Neste método, nós assumimos temporariamente que a conclusão é **FALSA** ($\sim Q$). 
-    Se, ao calcularmos, chegarmos a uma **Contradição** (algo como $A \land \sim A$), significa que a nossa suposição estava errada. Logo, se supor que é Falso deu erro, a conclusão original $Q$ tem que ser obrigatoriamente verdadeira!
+    Neste método de demonstração, nós assumimos temporariamente que a conclusão final pretendida é **FALSA** ($\sim Q$). 
+    Se, ao operar com as premissas, chegarmos a uma **Contradição Matemática** (como $P \land \sim P$), significa que a nossa suposição estava errada. Logo, se supor que $Q$ é Falso gerou um absurdo, a conclusão original $Q$ tem que ser obrigatoriamente Verdadeira!
     """)
 
 st.markdown("<br>", unsafe_allow_html=True)

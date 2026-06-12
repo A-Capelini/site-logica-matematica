@@ -10,7 +10,7 @@ st.set_page_config(
 # Definição das Páginas
 home = st.Page("modulos/00_home.py", title="Página Inicial", icon="🏠", default=True)
 
-# Roteiro de Aulas (Ordem Lógica Completa)
+# Roteiro de Aulas
 mod1 = st.Page("modulos/01_fundamentos.py", title="Módulo 1: Fundamentos", icon="📖")
 mod2 = st.Page("modulos/02_conectivos.py", title="Módulo 2: Conectivos e Tabelas", icon="🔗")
 mod3 = st.Page("modulos/03_equivalencias.py", title="Módulo 3: Equivalências Lógicas", icon="⚖️")
@@ -19,6 +19,7 @@ mod5 = st.Page("modulos/05_propriedades.py", title="Módulo 5: Propriedades", ic
 mod6 = st.Page("modulos/06_argumentos.py", title="Módulo 6: Argumentos", icon="🛡️")
 
 # Prática e Revisão
+ex_resolvidos = st.Page("modulos/exercicios_resolvidos.py", title="Exercícios Resolvidos", icon="📚")
 atv1 = st.Page("modulos/atv1.py", title="Atividade 1", icon="📝")
 atv2 = st.Page("modulos/atv2.py", title="Atividade 2", icon="✍️")
 mapa = st.Page("modulos/mapa_mental.py", title="Mapa Mental Interativo", icon="🗺️")
@@ -27,7 +28,7 @@ mapa = st.Page("modulos/mapa_mental.py", title="Mapa Mental Interativo", icon="�
 paginas = {
     "Apresentação": [home],
     "Roteiro de Aprendizagem": [mod1, mod2, mod3, mod4, mod5, mod6],
-    "Prática & Revisão": [atv1, atv2, mapa]
+    "Prática & Revisão": [ex_resolvidos, atv1, atv2, mapa]
 }
 
 # Inicializa a navegação
