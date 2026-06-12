@@ -1,0 +1,14 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Conda / Ambientes Virtuais
+.env
+.venv
+env/
+venv/
+
+# Sistema Operacional
+.DS_Store
+Thumbs.db

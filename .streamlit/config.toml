@@ -1,0 +1,18 @@
+### 5. `.streamlit/config.toml` (Configurações de Cores e Layout)
+Aqui definimos a paleta de cores. Escolhi um tom de azul com fundo claro, perfeito para sites educacionais. Você pode alterar os códigos hexadecimais (HEX) como preferir.
+```toml
+[theme]
+# Cor primária (usada em botões e destaques)
+primaryColor = "#1f77b4"
+
+# Cor de fundo da área principal
+backgroundColor = "#ffffff"
+
+# Cor de fundo da barra lateral (menu)
+secondaryBackgroundColor = "#f0f2f6"
+
+# Cor do texto
+textColor = "#262730"
+
+# Fonte do site
+font = "sans serif"
