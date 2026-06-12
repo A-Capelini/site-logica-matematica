@@ -4,18 +4,18 @@ import pandas as pd
 st.title("🛡️ Módulo 6: Argumentos e Validade")
 st.markdown("---")
 
-st.write("""
+st.write(r"""
 Um **Argumento Lógico** é uma sequência de proposições. As proposições iniciais são chamadas de **Premissas** ($P_1, P_2, \dots, P_n$), e a proposição final que derivamos delas é chamada de **Conclusão** ($Q$).
 """)
 
-st.info("""
+st.info(r"""
 💡 **Validade de um Argumento:** Um argumento é considerado **VÁLIDO** se a conclusão for uma consequência lógica das premissas. Ou seja, **toda vez que todas as premissas forem Verdadeiras, a Conclusão obrigatoriamente tem que ser Verdadeira.**
 """)
 
 st.markdown("---")
 st.header("1. Provando Validade por Tabela-Verdade")
-st.write("Para saber se o argumento $P_1, P_2 \vdash Q$ é válido:")
-st.markdown("""
+st.write(r"Para saber se o argumento $P_1, P_2 \vdash Q$ é válido:")
+st.markdown(r"""
 1. Construímos a tabela-verdade com as colunas das Premissas e da Conclusão.
 2. Buscamos as linhas onde **todas as premissas são Verdadeiras (V)** ao mesmo tempo.
 3. Se nessas linhas a conclusão também for 'V', o argumento é **Válido**. Se houver um único caso onde as premissas são 'V' e a conclusão for 'F', o argumento é **Inválido (Falácia)**.
@@ -49,7 +49,7 @@ with tab3:
 
 with tab4:
     st.subheader("Redução ao Absurdo (Demonstração Indireta)")
-    st.write("""
+    st.write(r"""
     Neste método, nós assumimos temporariamente que a conclusão é **FALSA** ($\sim Q$). 
     Se, ao calcularmos, chegarmos a uma **Contradição** (algo como $A \land \sim A$), significa que a nossa suposição estava errada. Logo, se supor que é Falso deu erro, a conclusão original $Q$ tem que ser obrigatoriamente verdadeira!
     """)
